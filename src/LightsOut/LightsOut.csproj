@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net462;net6.0;net7.0</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PackageVersion>1.0.0</PackageVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <DebugType>portable</DebugType>
+    <LangVersion>preview</LangVersion>
+    <Configurations>Debug;Release;BuildForRelease</Configurations>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageProjectUrl>https://github.com/fluffynuts/NExpect</PackageProjectUrl>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/fluffynuts/NExpect/master/src/NExpect/icon.png</PackageIconUrl>
+    <Copyright>Copyright 2023</Copyright>
+    <Authors>
+      Davyd McColl
+    </Authors>
+    <Description>
+      A dotnet wrapper library for the EskomSePush api
+    </Description>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(TargetFramework)=='netstandard2.0'">
+    <DefineConstants>NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(TargetFramework)=='net7.0'">
+    <DefineConstants>NET70</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(TargetFramework)=='net6.0'">
+    <DefineConstants>NET60</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath=""/>
+    <None Include="..\..\README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
+  <Import Project="net462packages.targets" Condition=" '$(TargetFramework)' == 'net462'"/>
+  <Import Project="netstandard2.0packages.targets" Condition=" '$(TargetFramework)' == 'netstandard2.0'"/>
+</Project>

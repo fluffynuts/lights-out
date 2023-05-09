@@ -1,0 +1,18 @@
+{
+  "name": "lights-out",
+  "version": "1.0.0",
+  "description": "Api & tooling around Eskom Se Push API for load-shedding reaction/automation",
+  "scripts": {
+    "build": "run-s \"zarro build-dotnet\"",
+    "test": "run-s \"zarro test-dotnet\"",
+    "zarro": "cross-env DOTNET_CORE=1 PACK_INCLUDE_CSPROJ=* PACK_EXCLUDE_CSPROJ=*Tests* zarro",
+    "pack": "cross-env BUILD_CONFIGURATION=Release run-s \"zarro pack\"",
+    "release": "cross-env BUILD_CONFIGURATION=Release run-s \"zarro release\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "zarro": "^1.124.0"
+  }
+}
