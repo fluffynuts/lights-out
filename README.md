@@ -9,6 +9,12 @@ https://eskomsepush.gumroad.com/l/api
 
 A personal token with usage limits can be obtained for free.
 
+Installation
+---
+Use your favorite nuget package manager to install the package `LightsOut`, eg
+
+`dotnet add package LightsOut`
+
 Usage
 ---
 
