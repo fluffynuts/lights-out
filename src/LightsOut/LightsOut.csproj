@@ -11,11 +11,11 @@
     <LangVersion>preview</LangVersion>
     <Configurations>Debug;Release;BuildForRelease</Configurations>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageProjectUrl>https://github.com/fluffynuts/NExpect</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/fluffynuts/lights-out</PackageProjectUrl>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/fluffynuts/NExpect/master/src/NExpect/icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/fluffynuts/lights-out/master/src/LightsOut/icon.png</PackageIconUrl>
     <Copyright>Copyright 2023</Copyright>
     <Authors>
       Davyd McColl
