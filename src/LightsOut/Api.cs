@@ -45,7 +45,7 @@ public interface IApi : IDisposable
     /// </summary>
     /// <param name="areaId"></param>
     /// <returns></returns>
-    Task<AreaScheduleResponse> FetchAreaSchedule(
+    Task<AreaSchedule> FetchAreaSchedule(
         string areaId
     );
 }
@@ -125,11 +125,11 @@ public class Api : IApi
     }
 
     /// <inheritdoc />
-    public async Task<AreaScheduleResponse> FetchAreaSchedule(
+    public async Task<AreaSchedule> FetchAreaSchedule(
         string areaId
     )
     {
-        return await _httpClient.GetAsync<AreaScheduleResponse>(
+        return await _httpClient.GetAsync<AreaSchedule>(
             RelativeUrlBuilder.Create()
                 .WithPath("area")
                 .WithParameter("id", areaId)

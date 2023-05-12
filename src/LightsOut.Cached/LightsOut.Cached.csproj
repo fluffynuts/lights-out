@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net462;net6.0;net7.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -21,23 +22,22 @@
       Davyd McColl
     </Authors>
     <Description>
-      A dotnet wrapper library for the EskomSePush api
+      A dotnet wrapper library for the EskomSePush api, using client-side caching in a
+      sqlite database
     </Description>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
-  <PropertyGroup Condition="$(TargetFramework)=='netstandard2.0'">
-    <DefineConstants>NETSTANDARD</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(TargetFramework)=='net7.0'">
-    <DefineConstants>NET70</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(TargetFramework)=='net6.0'">
-    <DefineConstants>NET60</DefineConstants>
-  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LightsOut\LightsOut.csproj" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="icon.png" Pack="true" PackagePath="" />
     <None Include="..\..\README.md" Pack="true" PackagePath="" />
   </ItemGroup>
-  <Import Project="net462packages.targets" Condition=" '$(TargetFramework)' == 'net462'" />
-  <Import Project="netstandard2.0packages.targets" Condition=" '$(TargetFramework)' == 'netstandard2.0'" />
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.5" />
+  </ItemGroup>
+
 </Project>

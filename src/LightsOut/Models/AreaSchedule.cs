@@ -1,12 +1,24 @@
 ﻿using System;
 using System.Linq;
 using System.Text.Json.Serialization;
+// ReSharper disable ClassNeverInstantiated.Global
 
 namespace LightsOut.Models
 {
+    
+    /// <summary>
+    /// A schedule for an area
+    /// </summary>
+#pragma warning disable CS0618
+    public class AreaSchedule: AreaScheduleResponse
+#pragma warning restore CS0618
+    {
+    }
+
     /// <summary>
     /// The response from a FetchAreaSchedule request
     /// </summary>
+    [Obsolete("This is being renamed to AreaSchedule. This type will be removed in a future release.")]
     public class AreaScheduleResponse
     {
         /// <summary>
